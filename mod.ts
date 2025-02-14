@@ -1,3 +1,6 @@
+/**
+ * The engine type.
+ */
 export enum EngineType {
   Deno = "deno",
   Node = "node",
@@ -6,6 +9,11 @@ export enum EngineType {
   Unknown = "unknown"
 }
 
+/**
+ * Get the current runtime.
+ * 
+ * @returns The current engine type
+ */
 export function getRuntime(): EngineType {
   switch (true) {
     case typeof Deno !== "undefined":
