@@ -5,13 +5,13 @@ A lightweight TypeScript utility that detects the current JavaScript runtime env
 ## Installation
 
 ```bash
-deno add jsr:@online/engine
+deno add jsr:@online/runtime
 ```
 
 ## Usage
 
 ```typescript
-import { getRuntime, EngineType } from '@online/engine';
+import { getRuntime, EngineType } from '@online/runtime';
 
 const currentRuntime = getRuntime();
 
