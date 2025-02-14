@@ -1,6 +1,6 @@
 {
   "name": "@online/runtime",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "exports": "./mod.ts",
   "tasks": {
     "generate:ai-docs": "deno doc --json ./*.ts >> ./ai-docs.json"
