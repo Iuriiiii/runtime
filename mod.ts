@@ -1,7 +1,7 @@
 /**
- * The engine type.
+ * The runtime.
  */
-export enum EngineType {
+export enum Runtime {
   Deno = "deno",
   Node = "node",
   Bun = "bun",
@@ -12,22 +12,22 @@ export enum EngineType {
 /**
  * Get the current runtime.
  * 
- * @returns The current engine type
+ * @returns The current runtime.
  */
-export function getRuntime(): EngineType {
+export function getRuntime(): Runtime {
   switch (true) {
     case typeof Deno !== "undefined":
-      return EngineType.Deno;
+      return Runtime.Deno;
     // @ts-ignore: check Bun 
     case typeof Bun !== "undefined":
-      return EngineType.Bun;
+      return Runtime.Bun;
     // @ts-ignore: check process 
     // deno-lint-ignore no-process-globals
     case typeof process !== "undefined" && process.versions?.node:
-      return EngineType.Node;
+      return Runtime.Node;
     case typeof window !== "undefined":
-      return EngineType.Browser;
+      return Runtime.Browser;
     default:
-      return EngineType.Unknown;
+      return Runtime.Unknown;
   }
 }
