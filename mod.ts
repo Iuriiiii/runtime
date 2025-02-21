@@ -23,7 +23,7 @@ export function getRuntime(): Runtime {
       return Runtime.Bun;
     // @ts-ignore: check process 
     // deno-lint-ignore no-process-globals
-    case typeof process !== "undefined" && process.versions?.node:
+    case typeof process !== "undefined" && process.toString() === '[object process]':
       return Runtime.Node;
     case typeof window !== "undefined":
       return Runtime.Browser;
