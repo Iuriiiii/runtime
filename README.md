@@ -1,6 +1,7 @@
 # Runtime Detection Utility
 
-A lightweight TypeScript utility that detects the current JavaScript runtime environment (Deno, Node.js, Bun, or Browser).
+A lightweight TypeScript utility that detects the current JavaScript runtime
+environment (Deno, Node.js, Bun, or Browser).
 
 ## Installation
 
@@ -11,25 +12,25 @@ deno add jsr:@online/runtime
 ## Usage
 
 ```typescript
-import { getRuntime, EngineType } from '@online/runtime';
+import { EngineType, getRuntime } from "@online/runtime";
 
 const currentRuntime = getRuntime();
 
 switch (currentRuntime) {
   case EngineType.Deno:
-    console.log('Running in Deno');
+    console.log("Running in Deno");
     break;
   case EngineType.Node:
-    console.log('Running in Node.js');
+    console.log("Running in Node.js");
     break;
   case EngineType.Bun:
-    console.log('Running in Bun');
+    console.log("Running in Bun");
     break;
   case EngineType.Browser:
-    console.log('Running in Browser');
+    console.log("Running in Browser");
     break;
   default:
-    console.log('Unknown runtime environment');
+    console.log("Unknown runtime environment");
 }
 ```
 
@@ -42,10 +43,10 @@ An enum representing different JavaScript runtime environments:
 ```typescript
 enum EngineType {
   Deno = "deno",
-  Node = "node", 
+  Node = "node",
   Bun = "bun",
   Browser = "browser",
-  Unknown = "unknown"
+  Unknown = "unknown",
 }
 ```
 
@@ -54,6 +55,7 @@ enum EngineType {
 Returns the current runtime environment as an `EngineType`.
 
 Returns:
+
 - `EngineType.Deno` - When running in Deno
 - `EngineType.Node` - When running in Node.js
 - `EngineType.Bun` - When running in Bun
@@ -62,7 +64,8 @@ Returns:
 
 ## How it Works
 
-The utility determines the runtime environment by checking for the existence of runtime-specific global variables:
+The utility determines the runtime environment by checking for the existence of
+runtime-specific global variables:
 
 1. Checks for `Deno` global object (Deno)
 2. Checks for `Bun` global object (Bun)
@@ -72,7 +75,8 @@ The utility determines the runtime environment by checking for the existence of 
 
 ## TypeScript Support
 
-This utility is written in TypeScript and includes type definitions out of the box.
+This utility is written in TypeScript and includes type definitions out of the
+box.
 
 ## License
 
